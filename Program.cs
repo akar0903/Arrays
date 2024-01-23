@@ -1,27 +1,28 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-class Program
+namespace Arrays_problems
 {
-    static void Main()
+    internal class Program
     {
-        int rows = 7; 
-
-        for (int i = 0; i < rows; i++)
+        static void Main(string[] args)
         {
-            for (int j = 0; j < rows; j++)
+            string sentence = Console.ReadLine();
+            string[] words = sentence.Split(' ');
+            int len = words.Length;
+            for (int i = 0; i < len; i++)
             {
-                if (i == 0 || i == rows - 1 || j == 0 || j == rows - 1)
-                {
-                    Console.Write("*");
-                }
-                else
-                {
-                    Console.Write(" ");
-                }
+                char[] rev = words[i].ToCharArray();
+                Array.Reverse(rev);
+                words[i] = new string(rev);
             }
-            Console.WriteLine();
-        }
+            string reversedString = string.Join(" ", words);
+            Console.WriteLine(reversedString);
 
-        Console.ReadLine();
+            Console.ReadLine();
+        }
     }
 }

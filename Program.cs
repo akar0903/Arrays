@@ -1,14 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 
-class Duplicate
+class duplicate
 {
     static void CountOccurrences(int[] arr, int len)
     {
         Dictionary<int, int> elementCount = new Dictionary<int, int>();
-
-        int maxElement = int.MinValue;
-        int minElement = int.MaxValue;
 
         for (int i = 0; i < len; i++)
         {
@@ -20,20 +17,15 @@ class Duplicate
             {
                 elementCount.Add(arr[i], 1);
             }
-            if (arr[i] > maxElement)
+        }
+        foreach (var entry in elementCount)
+        {
+            if(entry.Value > 1)
             {
-                maxElement = arr[i];
-            }
-
-            if (arr[i] < minElement)
-            {
-                minElement = arr[i];
+                Console.WriteLine(entry.Key);
             }
         }
-        Console.WriteLine($"Maximum element: {maxElement}");
-        Console.WriteLine($"Minimum element: {minElement}");
     }
-
     static void Main()
     {
         int[] arr = { 12, 11, 40, 12, 5, 6, 5, 12, 11, 8, 9, 8 };

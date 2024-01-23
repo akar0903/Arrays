@@ -18,9 +18,10 @@ class duplicate
                 elementCount.Add(arr[i], 1);
             }
         }
+        Console.WriteLine("Unique elements are");
         foreach (var entry in elementCount)
         {
-            Console.WriteLine($"{entry.Key} occurs {entry.Value} times");
+            Console.WriteLine($"{entry.Key}");
         }
     }
     static void Main()

@@ -1,37 +1,20 @@
 ﻿using System;
-using System.Collections.Generic;
 
-class duplicate
+class Program
 {
-    static void CountOccurrences(int[] arr, int len)
-    {
-        Dictionary<int, int> elementCount = new Dictionary<int, int>();
-
-        for (int i = 0; i < len; i++)
-        {
-            if (elementCount.ContainsKey(arr[i]))
-            {
-                elementCount[arr[i]]++;
-            }
-            else
-            {
-                elementCount.Add(arr[i], 1);
-            }
-        }
-        foreach (var entry in elementCount)
-        {
-            if(entry.Value > 1)
-            {
-                Console.WriteLine(entry.Key);
-            }
-        }
-    }
     static void Main()
     {
-        int[] arr = { 12, 11, 40, 12, 5, 6, 5, 12, 11, 8, 9, 8 };
-        int n = arr.Length;
+        int rows = 7; 
 
-        CountOccurrences(arr, n);
+        for (int i = rows; i >= 1; i--)
+        {
+            for (int j = 1; j <= i; j++)
+            {
+                Console.Write("*");
+            }
+            Console.WriteLine();
+        }
+
         Console.ReadLine();
     }
 }

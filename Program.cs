@@ -1,17 +1,40 @@
 ﻿using System;
-public class SumExample
+class MatrixDemo
 {
     public static void Main(string[] args)
     {
-        int n, sum = 0, m;
-        Console.Write("Enter a number: ");
-        n = int.Parse(Console.ReadLine());
-        while (n > 0)   //123   
+        int i = 0;
+        int j = 0;
+        int sum = 0;
+        int row = 2;
+        int col = 2;
+        int[,] Matrix = new int[row, col];
+        Console.Write("Enter the elements of matrix: ");
+        for (i = 0; i < row; i++)
         {
-            m = n % 10;      //m=3 m=2 m=1 
-            sum = sum + m;  //sum=3 sum=3+2=5 sum=3+2+1=6 
-            n = n / 10;      //n=12 n=1 
+            for (j = 0; j < col; j++)
+            {
+                Matrix[i, j] = int.Parse(Console.ReadLine());
+            }
         }
-        Console.Write("Sum is= " + sum);
+        Console.WriteLine("\nMatrix: ");
+        for (i = 0; i < row; i++)
+        {
+            for (j = 0; j < col; j++)
+            {
+                Console.Write(Matrix[i, j] + "\t");
+            }
+            Console.WriteLine();
+        }
+        for (i = 0; i < row; i++)
+        {
+            sum = 0;
+            for (j = 0; j < col; j++)
+            {
+                sum += Matrix[i, j];
+            }
+            Console.WriteLine("Sum of row[{0}]: {1}", (i + 1), sum);
+        }
+        Console.ReadLine();
     }
 }

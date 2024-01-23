@@ -19,9 +19,9 @@ class duplicate
             }
         }
         Console.WriteLine("Unique elements are");
-        foreach (var entry in elementCount)
+        foreach(var entry in elementCount)
         {
-            Console.WriteLine($"{entry.Key}");
+            Console.WriteLine($"{entry.Key} occurs {entry.Value} times");
         }
     }
     static void Main()

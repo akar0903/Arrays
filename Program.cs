@@ -6,11 +6,18 @@ class Program
     {
         int rows = 7; 
 
-        for (int i = rows; i >= 1; i--)
+        for (int i = 0; i < rows; i++)
         {
-            for (int j = 1; j <= i; j++)
+            for (int j = 0; j < rows; j++)
             {
-                Console.Write("*");
+                if (i == 0 || i == rows - 1 || j == 0 || j == rows - 1)
+                {
+                    Console.Write("*");
+                }
+                else
+                {
+                    Console.Write(" ");
+                }
             }
             Console.WriteLine();
         }

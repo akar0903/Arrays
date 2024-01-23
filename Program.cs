@@ -1,28 +1,17 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Arrays_problems
+public class SumExample
 {
-    internal class Program
+    public static void Main(string[] args)
     {
-        static void Main(string[] args)
+        int n, sum = 0, m;
+        Console.Write("Enter a number: ");
+        n = int.Parse(Console.ReadLine());
+        while (n > 0)   //123   
         {
-            string sentence = Console.ReadLine();
-            string[] words = sentence.Split(' ');
-            int len = words.Length;
-            for (int i = 0; i < len; i++)
-            {
-                char[] rev = words[i].ToCharArray();
-                Array.Reverse(rev);
-                words[i] = new string(rev);
-            }
-            string reversedString = string.Join(" ", words);
-            Console.WriteLine(reversedString);
-
-            Console.ReadLine();
+            m = n % 10;      //m=3 m=2 m=1 
+            sum = sum + m;  //sum=3 sum=3+2=5 sum=3+2+1=6 
+            n = n / 10;      //n=12 n=1 
         }
+        Console.Write("Sum is= " + sum);
     }
 }
